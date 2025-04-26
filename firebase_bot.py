@@ -5,8 +5,9 @@ import time
 import os, json
 
 # Thông tin bot Telegram
-BOT_TOKEN = '7847098252:AAGDc69rCFe8F1_2cBHjwuwRdnMSnq3XAf8'  # Thay bằng BOT_TOKEN của bạn
-CHAT_ID = '-4723792950'  # ID của bạn hoặc nhóm
+
+BOT_TOKEN = os.environ['BOT_TOKEN']
+CHAT_ID = os.environ['CHAT_ID']
 TELEGRAM_API = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
 
 # Khởi tạo Firebase
