@@ -2,6 +2,7 @@ import firebase_admin
 from firebase_admin import credentials, db
 import requests
 import time
+import os, json
 
 # Thông tin bot Telegram
 BOT_TOKEN = '7847098252:AAGDc69rCFe8F1_2cBHjwuwRdnMSnq3XAf8'  # Thay bằng BOT_TOKEN của bạn
@@ -9,7 +10,10 @@ CHAT_ID = '-4723792950'  # ID của bạn hoặc nhóm
 TELEGRAM_API = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
 
 # Khởi tạo Firebase
-cred = credentials.Certificate('serviceAccountKey.json')
+firebase_json = os.environ['FIREBASE_CREDENTIALS_JSON']
+cred_dict = json.loads(firebase_json)
+cred = credentials.Certificate(cred_dict)
+
 firebase_admin.initialize_app(cred, {
     'databaseURL': 'https://duan1-497fe-default-rtdb.firebaseio.com/'
 })
