@@ -29,7 +29,7 @@ def send_telegram(message):
 
 # Theo dõi thay đổi trên Firebase
 def main():
-    ref = db.reference('/Alert/Message')
+    ref = db.reference('/Telegram/Message')
     last_msg = None
 
     while True:
