@@ -11,7 +11,7 @@ TELEGRAM_API = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
 # Khởi tạo Firebase
 cred = credentials.Certificate('serviceAccountKey.json')
 firebase_admin.initialize_app(cred, {
-    'databaseURL': 'https://your-project-id.firebaseio.com/'
+    'databaseURL': 'https://duan1-497fe-default-rtdb.firebaseio.com/'
 })
 
 # Hàm gửi tin nhắn Telegram
